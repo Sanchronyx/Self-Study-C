@@ -2,16 +2,15 @@
 
 void reduce (int numerator, int denominator, int *reduced_numerator, int *reduced_denominator){
     
-    int GCD;
+    int GCD, n = numerator, d = denominator;
 
-    while (numerator != 0 && denominator != 0){
-        GCD = numerator % denominator;
-        numerator = denominator;
-        denominator = GCD;
+    while (n != 0 && d != 0){
+        GCD = n % d;
+        n = d;
+        d = GCD;
     }
-
-    *reduced_numerator = numerator/GCD;
-    *reduced_denominator = denominator/GCD;
+    *reduced_numerator = numerator/n;
+    *reduced_denominator = denominator/n;
 }
 
 int main(void){
